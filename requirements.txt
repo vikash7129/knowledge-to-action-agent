@@ -3,6 +3,7 @@ langgraph
 langchain-google-genai
 langchain-community
 langchain-text-splitters
+langchain-chroma
 google-generativeai
 python-dotenv
 fastapi
