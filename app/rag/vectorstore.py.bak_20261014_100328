@@ -1,0 +1,173 @@
+from typing import List
+
+from langchain_core.documents import Document
+from langchain_chroma import Chroma
+
+from .embeddings import get_embeddings
+
+
+CHROMA_PATH = "data/chroma_db"
+
+REQUIRED_METADATA = [
+    "source",
+    "filename",
+    "file_type",
+    "document_id",
+    "page",
+    "chunk_id",
+]
+
+
+def validate_chunks(chunks: List[Document]) -> tuple[str, str]:
+    """
+    Validate metadata before modifying the existing vector database.
+
+    All chunks in one ingestion batch must belong to the same source
+    and document ID.
+    """
+
+    if not chunks:
+        raise ValueError("Cannot index an empty chunk list.")
+
+    for index, chunk in enumerate(chunks):
+        if not isinstance(chunk, Document):
+            raise TypeError(
+                f"Item {index} is not a LangChain Document."
+            )
+
+        if not chunk.page_content or not chunk.page_content.strip():
+            raise ValueError(
+                f"Chunk {index} has empty page content."
+            )
+
+        metadata = chunk.metadata or {}
+
+        missing_fields = [
+            field
+            for field in REQUIRED_METADATA
+            if field not in metadata
+        ]
+
+        if missing_fields:
+            raise ValueError(
+                f"Chunk {index} is missing metadata: "
+                f"{missing_fields}"
+            )
+
+        if not metadata.get("source"):
+            raise ValueError(
+                f"Chunk {index} has an empty source."
+            )
+
+        if not metadata.get("document_id"):
+            raise ValueError(
+                f"Chunk {index} has an empty document_id."
+            )
+
+        if not isinstance(metadata["chunk_id"], int):
+            raise ValueError(
+                f"Chunk {index} must have an integer chunk_id."
+            )
+
+    source_names = {
+        str(chunk.metadata["source"])
+        for chunk in chunks
+    }
+
+    document_ids = {
+        str(chunk.metadata["document_id"])
+        for chunk in chunks
+    }
+
+    if len(source_names) != 1:
+        raise ValueError(
+            "All chunks in one batch must have the same source."
+        )
+
+    if len(document_ids) != 1:
+        raise ValueError(
+            "All chunks in one batch must have the same document_id."
+        )
+
+    source_name = next(iter(source_names))
+    document_id = next(iter(document_ids))
+
+    return source_name, document_id
+
+
+def create_vectorstore(
+    chunks: List[Document],
+) -> Chroma:
+    """
+    Create or open ChromaDB and replace the indexed chunks for one source.
+
+    Metadata validation happens before any existing source is deleted.
+    """
+
+    # 1. Validate before modifying the database.
+    if not chunks:
+        print("No chunks to add.")
+
+        embeddings = get_embeddings()
+
+        return Chroma(
+            persist_directory=CHROMA_PATH,
+            embedding_function=embeddings,
+        )
+
+    source_name, document_id = validate_chunks(chunks)
+
+    # 2. Open the existing persistent vector database.
+    embeddings = get_embeddings()
+
+    vectorstore = Chroma(
+        persist_directory=CHROMA_PATH,
+        embedding_function=embeddings,
+    )
+
+    # 3. Remove previous chunks for this source.
+    print(f"Replacing existing source: {source_name}")
+
+    vectorstore.delete(
+        where={"source": source_name}
+    )
+
+    print(f"Old chunks removed: {source_name}")
+
+    # 4. Insert the validated new chunks.
+    vectorstore.add_documents(
+        documents=chunks
+    )
+
+    # 5. Verify the inserted source count.
+    stored = vectorstore.get(
+        where={"source": source_name},
+        include=["metadatas"],
+    )
+
+    stored_metadata = stored.get("metadatas", []) or []
+
+    if len(stored_metadata) != len(chunks):
+        raise RuntimeError(
+            f"Chunk count mismatch for {source_name}: "
+            f"expected {len(chunks)}, found {len(stored_metadata)}."
+        )
+
+    stored_document_ids = {
+        str(metadata.get("document_id"))
+        for metadata in stored_metadata
+        if metadata
+    }
+
+    if stored_document_ids != {document_id}:
+        raise RuntimeError(
+            f"Stored document_id verification failed for {source_name}."
+        )
+
+    print(f"Added {len(chunks)} new chunks")
+    print(f"Document ID: {document_id}")
+    print(f"Source: {source_name}")
+    print("Metadata validation: PASS")
+    print("Stored chunk count verification: PASS")
+
+    return vectorstore

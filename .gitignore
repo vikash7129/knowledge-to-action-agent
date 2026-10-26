@@ -1,0 +1,39 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Local databases and backups
+*.db
+*.sqlite
+*.sqlite3
+*.db-*
+*.sqlite-*
+
+# Local data, vector stores, and backups
+data/chroma_db/
+data/chroma_db_*/
+data/uploads/
+data/memory.db
+data/test.txt
+
+# Generated reports
+# Keep evaluation scripts and source code tracked.
+# Uncomment the next line if reports should remain local:
+# reports/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

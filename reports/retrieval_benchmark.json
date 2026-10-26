@@ -1,0 +1,257 @@
+{
+  "summary": {
+    "mode": "retrieval_only",
+    "llm_generation_enabled": false,
+    "llm_judge_enabled": false,
+    "total_cases": 12,
+    "completed_cases": 12,
+    "errors": 0,
+    "answerable_cases": 8,
+    "answerable_strict_passes": 8,
+    "answerable_pass_rate": 1.0,
+    "unanswerable_cases": 4,
+    "correct_abstentions": 4,
+    "abstention_accuracy": 1.0,
+    "mean_source_precision": 0.8333,
+    "mean_source_recall": 1.0,
+    "mean_source_f1": 0.8917,
+    "timestamp_utc": "2026-10-14T04:50:07.747404+00:00"
+  },
+  "results": [
+    {
+      "question": "Explain reinforcement learning using ml_notes.txt",
+      "required_sources": [
+        "ml_notes.txt"
+      ],
+      "acceptable_sources": [],
+      "actual_sources": [
+        "ml_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 1,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "What is deep learning?",
+      "required_sources": [
+        "dl_notes.txt"
+      ],
+      "acceptable_sources": [
+        "ai_notes.txt"
+      ],
+      "actual_sources": [
+        "ai_notes.txt",
+        "dl_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 2,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "Compare machine learning, deep learning, and artificial intelligence",
+      "required_sources": [
+        "ai_notes.txt",
+        "dl_notes.txt",
+        "ml_notes.txt"
+      ],
+      "acceptable_sources": [],
+      "actual_sources": [
+        "ai_notes.txt",
+        "dl_notes.txt",
+        "ml_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 3,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "What is machine learning?",
+      "required_sources": [
+        "ai_notes.txt",
+        "ml_notes.txt"
+      ],
+      "acceptable_sources": [
+        "dl_notes.txt"
+      ],
+      "actual_sources": [
+        "ai_notes.txt",
+        "dl_notes.txt",
+        "ml_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 3,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 0.6667,
+        "recall": 1.0,
+        "f1": 0.8
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "What is the difference between supervised and unsupervised learning?",
+      "required_sources": [
+        "ml_notes.txt"
+      ],
+      "acceptable_sources": [],
+      "actual_sources": [
+        "ml_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 1,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "What are CNN and RNN used for?",
+      "required_sources": [
+        "dl_notes.txt"
+      ],
+      "acceptable_sources": [],
+      "actual_sources": [
+        "dl_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 1,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "What does LSTM handle?",
+      "required_sources": [
+        "dl_notes.txt"
+      ],
+      "acceptable_sources": [],
+      "actual_sources": [
+        "dl_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 1,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "What is artificial intelligence?",
+      "required_sources": [
+        "ai_notes.txt"
+      ],
+      "acceptable_sources": [
+        "ml_notes.txt"
+      ],
+      "actual_sources": [
+        "ai_notes.txt",
+        "ml_notes.txt"
+      ],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 2,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667
+      },
+      "required_sources_found": true
+    },
+    {
+      "question": "Explain quantum computing.",
+      "required_sources": [],
+      "acceptable_sources": [],
+      "actual_sources": [],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 0,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": null,
+      "abstention_correct": true
+    },
+    {
+      "question": "Explain photosynthesis in plants.",
+      "required_sources": [],
+      "acceptable_sources": [],
+      "actual_sources": [],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 0,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": null,
+      "abstention_correct": true
+    },
+    {
+      "question": "Who won the 2022 FIFA World Cup?",
+      "required_sources": [],
+      "acceptable_sources": [],
+      "actual_sources": [],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 0,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": null,
+      "abstention_correct": true
+    },
+    {
+      "question": "What is the capital of Japan?",
+      "required_sources": [],
+      "acceptable_sources": [],
+      "actual_sources": [],
+      "status": "PASS",
+      "error": null,
+      "retrieved_document_count": 0,
+      "missing_required_sources": [],
+      "unexpected_sources": [],
+      "metrics": null,
+      "abstention_correct": true
+    }
+  ]
+}

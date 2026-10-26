@@ -1,0 +1,65 @@
+{
+    "benchmark_name": "LLM Judge Multi-Case Benchmark",
+    "generated_at_utc": "2026-10-13T13:41:50.571084+00:00",
+    "question": "How does reinforcement learning work?",
+    "summary": {
+        "total_cases": 4,
+        "successful_judge_calls": 4,
+        "passed_cases": 4,
+        "failed_cases": 0,
+        "case_classification_accuracy": 1.0,
+        "mean_faithfulness_score": 0.375,
+        "overall_status": "PASS"
+    },
+    "cases": [
+        {
+            "name": "Supported answer",
+            "expected_category": "supported",
+            "judge_status": "success",
+            "faithfulness_score": 1.0,
+            "score_band": "HIGH",
+            "expected_band": "HIGH",
+            "passed": true,
+            "explanation": "All claims made in the answer are directly supported by the provided evidence. The answer accurately summarizes the evidence.",
+            "judge_error": null
+        },
+        {
+            "name": "Completely unsupported answer",
+            "expected_category": "unsupported",
+            "judge_status": "success",
+            "faithfulness_score": 0.0,
+            "score_band": "LOW",
+            "expected_band": "LOW",
+            "passed": true,
+            "explanation": "The answer's claims about 'quantum crystals' and 'guarantees a perfect reward after exactly three actions' are not supported by the provided evidence and contradict the information given.",
+            "judge_error": null
+        },
+        {
+            "name": "Partially unsupported answer",
+            "expected_category": "partially_supported",
+            "judge_status": "success",
+            "faithfulness_score": 0.5,
+            "score_band": "MEDIUM",
+            "expected_band": "MEDIUM",
+            "passed": true,
+            "explanation": "The claim that 'An agent learns through interaction with an environment and receives rewards and penalties' is supported by the evidence. However, the claim 'Every agent also becomes perfect after exactly three attempts' is not supported by the provided evidence and is therefore unfaithful.",
+            "judge_error": null
+        },
+        {
+            "name": "Contradictory answer",
+            "expected_category": "unsupported",
+            "judge_status": "success",
+            "faithfulness_score": 0.0,
+            "score_band": "LOW",
+            "expected_band": "LOW",
+            "passed": true,
+            "explanation": "The answer directly contradicts every factual claim made in the evidence. The evidence states agents interact with an environment and receive rewards, while the answer claims they never interact and receive no rewards.",
+            "judge_error": null
+        }
+    ],
+    "limitations": [
+        "This benchmark contains only four test cases.",
+        "Scores depend on the judge model and its evaluation behavior.",
+        "Passing this benchmark does not establish production reliability."
+    ]
+}

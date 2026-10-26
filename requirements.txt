@@ -1,0 +1,16 @@
+langchain
+langgraph
+langchain-google-genai
+langchain-community
+langchain-text-splitters
+google-generativeai
+python-dotenv
+fastapi
+uvicorn
+streamlit
+pydantic
+chromadb
+pypdf
+tavily-python
+rank_bm25
+flashrank

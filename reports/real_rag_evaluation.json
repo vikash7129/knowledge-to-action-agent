@@ -1,0 +1,403 @@
+{
+    "benchmark_name": "Expanded Real RAG Answer Evaluation",
+    "generated_at_utc": "2026-10-14T03:28:06.193750+00:00",
+    "dataset_size": 12,
+    "summary": {
+        "total_cases": 12,
+        "answerable_cases": 8,
+        "unanswerable_cases": 4,
+        "retrieval_tests_passed": 12,
+        "retrieval_test_pass_rate": 1.0,
+        "source_coverage_passed": 12,
+        "source_coverage_rate": 1.0,
+        "mean_source_precision": 0.9305555555555555,
+        "mean_source_recall": 1.0,
+        "mean_source_f1": 0.9555555555555556,
+        "judge_successful": 0,
+        "judge_success_rate": 0.0,
+        "judge_errors": 1,
+        "judge_skipped": 4,
+        "pipeline_errors": 7,
+        "mean_judge_faithfulness": null,
+        "completed_cases": 5
+    },
+    "results": [
+        {
+            "case_number": 1,
+            "question": "Explain reinforcement learning using ml_notes.txt",
+            "expected_sources": [
+                "ml_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "ml_notes.txt"
+            ],
+            "retrieved_chunks": 1,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": "Reinforcement Learning is a type of Machine Learning where an agent learns by interacting with an environment. The agent receives rewards for good actions and penalties for bad actions. The goal of Reinforcement Learning is to learn actions that maximize the total reward.\n\nFor example, a robot placed inside a maze can move left, right, forward, or backward. If the robot moves closer to the goal, it receives a positive reward. If it moves in the wrong direction, it receives a penalty. Through this process, the robot learns which actions help it reach the goal successfully over time.",
+            "lexical_evaluation": {
+                "context_relevance": 0.5,
+                "answer_relevance": 0.5,
+                "faithfulness_indicator": 0.9333,
+                "warnings": []
+            },
+            "judge_evaluation": {
+                "status": "error",
+                "context_relevance": null,
+                "answer_relevance": null,
+                "faithfulness": null,
+                "reasons": {},
+                "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h37m2.553869338s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '74222s'}]}}"
+            },
+            "status": "completed",
+            "error": null
+        },
+        {
+            "case_number": 2,
+            "question": "What is deep learning?",
+            "expected_sources": [
+                "ai_notes.txt",
+                "dl_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "ai_notes.txt",
+                "dl_notes.txt"
+            ],
+            "retrieved_chunks": 2,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": null,
+            "lexical_evaluation": null,
+            "judge_evaluation": null,
+            "status": "error",
+            "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h36m20.584386515s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '74180s'}]}}"
+        },
+        {
+            "case_number": 3,
+            "question": "Compare machine learning, deep learning, and artificial intelligence",
+            "expected_sources": [
+                "ai_notes.txt",
+                "dl_notes.txt",
+                "ml_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "ai_notes.txt",
+                "dl_notes.txt",
+                "ml_notes.txt"
+            ],
+            "retrieved_chunks": 3,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": null,
+            "lexical_evaluation": null,
+            "judge_evaluation": null,
+            "status": "error",
+            "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h35m39.104890207s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '74139s'}]}}"
+        },
+        {
+            "case_number": 4,
+            "question": "What is machine learning?",
+            "expected_sources": [
+                "ai_notes.txt",
+                "ml_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "ai_notes.txt",
+                "dl_notes.txt",
+                "ml_notes.txt"
+            ],
+            "retrieved_chunks": 3,
+            "missing_expected_sources": [],
+            "unexpected_sources": [
+                "dl_notes.txt"
+            ],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 0.6666666666666666,
+                "recall": 1.0,
+                "f1": 0.8
+            },
+            "answer": null,
+            "lexical_evaluation": null,
+            "judge_evaluation": null,
+            "status": "error",
+            "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h34m56.650480271s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '74096s'}]}}"
+        },
+        {
+            "case_number": 5,
+            "question": "What is the difference between supervised and unsupervised learning?",
+            "expected_sources": [
+                "ml_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "ml_notes.txt"
+            ],
+            "retrieved_chunks": 1,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": null,
+            "lexical_evaluation": null,
+            "judge_evaluation": null,
+            "status": "error",
+            "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h34m14.356374645s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '74054s'}]}}"
+        },
+        {
+            "case_number": 6,
+            "question": "What are CNN and RNN used for?",
+            "expected_sources": [
+                "dl_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "dl_notes.txt"
+            ],
+            "retrieved_chunks": 1,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": null,
+            "lexical_evaluation": null,
+            "judge_evaluation": null,
+            "status": "error",
+            "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h33m32.506971358s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '74012s'}]}}"
+        },
+        {
+            "case_number": 7,
+            "question": "What does LSTM handle?",
+            "expected_sources": [
+                "dl_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "dl_notes.txt"
+            ],
+            "retrieved_chunks": 1,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": null,
+            "lexical_evaluation": null,
+            "judge_evaluation": null,
+            "status": "error",
+            "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h32m50.003516676s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '73970s'}]}}"
+        },
+        {
+            "case_number": 8,
+            "question": "What is artificial intelligence?",
+            "expected_sources": [
+                "ai_notes.txt"
+            ],
+            "expected_answerable": true,
+            "retrieved_sources": [
+                "ai_notes.txt",
+                "ml_notes.txt"
+            ],
+            "retrieved_chunks": 2,
+            "missing_expected_sources": [],
+            "unexpected_sources": [
+                "ml_notes.txt"
+            ],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 0.5,
+                "recall": 1.0,
+                "f1": 0.6666666666666666
+            },
+            "answer": null,
+            "lexical_evaluation": null,
+            "judge_evaluation": null,
+            "status": "error",
+            "error": "ChatGoogleGenerativeAIError: Error calling model 'gemini-2.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 20h32m7.827882598s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '73927s'}]}}"
+        },
+        {
+            "case_number": 9,
+            "question": "Explain quantum computing.",
+            "expected_sources": [],
+            "expected_answerable": false,
+            "retrieved_sources": [],
+            "retrieved_chunks": 0,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": "I could not find relevant information in the provided documents.",
+            "lexical_evaluation": {
+                "context_relevance": 0.0,
+                "answer_relevance": 0.0,
+                "faithfulness_indicator": 0.0,
+                "warnings": [
+                    "No retrieved documents are available."
+                ]
+            },
+            "judge_evaluation": {
+                "status": "skipped",
+                "context_relevance": null,
+                "answer_relevance": null,
+                "faithfulness": null,
+                "reasons": {},
+                "error": "No retrieved documents are available."
+            },
+            "status": "completed",
+            "error": null
+        },
+        {
+            "case_number": 10,
+            "question": "Explain photosynthesis in plants.",
+            "expected_sources": [],
+            "expected_answerable": false,
+            "retrieved_sources": [],
+            "retrieved_chunks": 0,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": "I could not find relevant information in the provided documents.",
+            "lexical_evaluation": {
+                "context_relevance": 0.0,
+                "answer_relevance": 0.0,
+                "faithfulness_indicator": 0.0,
+                "warnings": [
+                    "No retrieved documents are available."
+                ]
+            },
+            "judge_evaluation": {
+                "status": "skipped",
+                "context_relevance": null,
+                "answer_relevance": null,
+                "faithfulness": null,
+                "reasons": {},
+                "error": "No retrieved documents are available."
+            },
+            "status": "completed",
+            "error": null
+        },
+        {
+            "case_number": 11,
+            "question": "Who won the 2022 FIFA World Cup?",
+            "expected_sources": [],
+            "expected_answerable": false,
+            "retrieved_sources": [],
+            "retrieved_chunks": 0,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": "I could not find relevant information in the provided documents.",
+            "lexical_evaluation": {
+                "context_relevance": 0.0,
+                "answer_relevance": 0.0,
+                "faithfulness_indicator": 0.0,
+                "warnings": [
+                    "No retrieved documents are available."
+                ]
+            },
+            "judge_evaluation": {
+                "status": "skipped",
+                "context_relevance": null,
+                "answer_relevance": null,
+                "faithfulness": null,
+                "reasons": {},
+                "error": "No retrieved documents are available."
+            },
+            "status": "completed",
+            "error": null
+        },
+        {
+            "case_number": 12,
+            "question": "What is the capital of Japan?",
+            "expected_sources": [],
+            "expected_answerable": false,
+            "retrieved_sources": [],
+            "retrieved_chunks": 0,
+            "missing_expected_sources": [],
+            "unexpected_sources": [],
+            "source_pass": true,
+            "source_metrics": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0
+            },
+            "answer": "I could not find relevant information in the provided documents.",
+            "lexical_evaluation": {
+                "context_relevance": 0.0,
+                "answer_relevance": 0.0,
+                "faithfulness_indicator": 0.0,
+                "warnings": [
+                    "No retrieved documents are available."
+                ]
+            },
+            "judge_evaluation": {
+                "status": "skipped",
+                "context_relevance": null,
+                "answer_relevance": null,
+                "faithfulness": null,
+                "reasons": {},
+                "error": "No retrieved documents are available."
+            },
+            "status": "completed",
+            "error": null
+        }
+    ],
+    "limitations": [
+        "This is a small manually labelled evaluation dataset.",
+        "Expected sources are human-defined relevance labels.",
+        "Source metrics measure source-level overlap, not chunk-level relevance.",
+        "Unanswerable tests expect no relevant documents in the current corpus.",
+        "A retrieval pass does not guarantee that the generated answer is correct.",
+        "Lexical metrics are heuristic indicators.",
+        "LLM judge scores can be mistaken or inconsistent.",
+        "A successful judge call does not prove that the judge's score is correct.",
+        "The benchmark does not establish production reliability."
+    ]
+}
